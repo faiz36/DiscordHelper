@@ -22,48 +22,57 @@ final class Embed
         return $this->embedData;
     }
 
-    public function setTitle(string $title) : void
+    public function setTitle(string $title) : Embed
     {
         $this->embedData['title'] = $title;
+        return $this;
     }
 
-    public function setTimestamp() : void
+    public function setTimestamp() : Embed
     {
         $this->embedData['timestamp'] = date('c',time());
+        return $this;
     }
 
-    public function setColor(string $hex) : void
+    public function setColor(string $hex) : Embed
     {
         $this->embedData['color'] = hexdec($hex);
+        return $this;
     }
 
-    public function setDescription(string $description) : void
+    public function setDescription(string $description) : Embed
     {
         $this->embedData['description'] = $description;
+        return $this;
     }
 
-    public function setUrl(string $url) : void
+    public function setUrl(string $url) : Embed
     {
         $this->embedData['url'] = $url;
+        return $this;
     }
 
-    public function setFooter(string $text,string $icon_url = '') : void
+    public function setFooter(string $text,string $icon_url = '') : Embed
     {
         $this->embedData['footer'] = ['text' => $text,'icon_url' => $icon_url];
+        return $this;
     }
 
-    public function setImage(string $image_url) : void
+    public function setImage(string $image_url) : Embed
     {
         $this->embedData['image'] = ['url' => $image_url];
+        return $this;
     }
 
-    public function setAuthor(string $name,string $url) : void
+    public function setAuthor(string $name,string $url) : Embed
     {
         $this->embedData['author'] = ['name' => $name,'url' => $url];
+        return $this;
     }
 
-    public function addField(string $name,string $value,bool $inline) : void
+    public function addField(string $name,string $value,bool $inline) : Embed
     {
         $this->embedData['fields'][] = ['name' => $name,'value' => $value,'inline' => $inline];
+        return $this;
     }
 }
