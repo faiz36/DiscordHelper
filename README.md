@@ -18,7 +18,7 @@
 
 ### Features
 
-- [X] Support Eebed
+- [X] Support Embed
 - [X] Using AsyncTask
 
 ### Image
